@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://drive.google.com/thumbnail?id=1RHl-omoRLWIzf-lRT9AQWYZouezaHuJl" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>AnimeToday</title>
+</head>
+<body>
+    <header>
+        <h1>AnimeToday</h1>
+        <div class="header-buttons">
+            <button class="btn-hint" id="btn-hint">Pedir Dica</button>
+            <button class="btn-help" id="btn-help">Como Jogar</button>
+        </div>
+    </header>
+
+    <div class="instructions" id="instructions-panel">
+        <p>Adivinhe o personagem misterioso do dia! Digite um nome para começar:</p>
+        <ul>
+            <li><span style="color: var(--correct-color); font-weight: bold;">Verde</span> significa que você acertou o atributo em cheio.</li>
+            <li><span style="color: var(--incorrect-color); font-weight: bold;">Vermelho</span> significa que o atributo está incorreto.</li>
+            <li>No campo <strong>Ano</strong>, setas indicam se o personagem correto estreou antes (🔽) ou depois (🔼) do seu palpite.</li>
+        </ul>
+    </div>
+
+    <div class="hint-panel" id="hint-panel"></div>
+
+    <div class="search-container">
+        <input type="text" class="search-box" id="search-input" placeholder="Digite o nome do personagem..." autocomplete="off">
+        <div class="autocomplete-dropdown" id="dropdown"></div>
+    </div>
+
+    <main class="grid-container">
+        <div class="grid-header">
+            <div>Foto</div>
+            <div>Nome</div>
+            <div>Anime</div>
+            <div>Gênero</div>
+            <div>Cabelo</div>
+            <div>Demografia</div>
+            <div>Ano</div>
+            <div>Papel</div>
+        </div>
+        <div id="guesses-box"></div>
+    </main>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="modal-victory" id="modal-victory">
+        <h2>Você Venceu!</h2>
+        <p>Parabéns, você descobriu o personagem!</p>
+        <div class="modal-container-img" id="victory-img-box"></div>
+        <p><strong id="victory-name">Nome</strong></p>
+        <p>Tentativas necessárias: <span id="victory-tries" style="color: var(--border-neon); font-weight: bold;">0</span></p>
+        <button class="btn-restart" id="btn-restart">Jogar Novamente</button>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
