@@ -109,6 +109,7 @@
             width: 100%;
             max-width: 500px;
             margin-bottom: 40px;
+            
         }
 
         .search-box {
@@ -272,49 +273,145 @@
         @keyframes popUp {
             100% { transform: translate(-50%, -50%) scale(1); }
         }
+/* ==========================================================================
+   SUPORTE PARA DISPOSITIVOS MÓVEIS (TABLETS E CELULARES)
+   ========================================================================== */
 
-        /* --- Suporte para Dispositivos Móveis (Mobile) --- */
-        @media (max-width: 768px) {
-    /* Ajusta o espaçamento do corpo da página no mobile */
+/* 📱 Ajustes gerais para telas médias e pequenas (Tablets e Celulares) */
+@media (max-width: 768px) {
     body {
         padding: 10px;
     }
 
-    /* Reduz o tamanho do título principal */
+    /* Organiza o cabeçalho para não amassar os elementos */
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 15px 10px;
+    }
+
     h1 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    /* Ajusta os botões do cabeçalho (Dica / Como Jogar) */
+    /* Organiza os botões em linha fluida */
     .header-buttons {
-        gap: 5px;
-    }
-    .btn-help, .btn-hint {
-        padding: 5px 10px;
-        font-size: 0.8rem;
+        gap: 8px;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap; /* Faz os botões irem para a linha de baixo se faltar espaço */
     }
 
-    /* Ajusta a caixa de pesquisa */
+    .btn-help, .btn-hint, #btn-avisos {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
+    /* Ajuste na caixa de avisos flutuante para não sumir da tela */
+    .popover-avisos {
+        position: fixed; /* Fixa relativo à tela no mobile */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) !important; /* Centraliza como um modal */
+        width: 90%;
+        max-width: 320px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.7);
+    }
+
+    /* Reduz a caixa de pesquisa para caber na tela */
+    .search-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
     .search-box {
         font-size: 1rem;
         padding: 10px 15px;
     }
 
-    /* Diminui o tamanho das fontes dos cabeçalhos da tabela */
+    /* 🚨 O SEGREDO DA TABELA RESPONSIVA: PERMITIR ROLAGEM HORIZONTAL APENAS NA GRID */
+    .grid-container {
+        overflow-x: auto; /* Cria barra de rolagem apenas se a tabela for maior que o celular */
+        width: 100%;
+        white-space: nowrap; /* Evita quebras esquisitas de texto */
+        -webkit-overflow-scrolling: touch; /* Rolagem suave no iPhone/iOS */
+        padding-bottom: 5px;
+    }
+
+    /* Define larguras mínimas seguras para cada coluna não amassar */
+    .grid-header, .grid-row {
+        grid-template-columns: 65px 130px 110px 95px 90px 110px 70px 110px !important;
+        gap: 4px !important;
+    }
+
     .grid-header div {
-        font-size: 0.55rem;
-        letter-spacing: 0;
+        font-size: 0.75rem;
+        padding: 6px 2px;
     }
 
-    /* Reduz a altura mínima, o espaçamento interno e a fonte das células da tabela */
     .grid-cell {
-        font-size: 0.7rem;
-        min-height: 60px;
-        padding: 2px;
+        font-size: 0.8rem;
+        min-height: 55px;
+        padding: 4px 2px;
     }
 
-    /* Reduz o tamanho das imagens/avatares para caberem perfeitamente nas colunas */
     .grid-cell.img-cell img {
-        height: 50px;
+        height: 45px;
+        width: 45px;
+    }
+}
+
+/* 📲 Ajustes finos adicionais específicos para Celulares Pequenos */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .btn-help, .btn-hint, #btn-avisos {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+        flex: 1 1 auto; /* Faz os botões distribuírem o tamanho igualmente */
+        min-width: 80px;
+    }
+}
+/* --- Caixa de Avisos Flutuante --- */
+.popover-avisos {
+    position: absolute;
+    top: 45px; /* Alinha logo abaixo do botão */
+    left: 0;
+    width: 280px;
+    background-color: var(--panel-bg);
+    border: 2px solid var(--purple-neon);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    animation: flipIn 0.2s ease-out; /* Reaproveita sua animação existente */
+}
+
+.popover-avisos h3 {
+    font-size: 1rem;
+    color: var(--border-neon);
+    margin-bottom: 5px;
+}
+
+.popover-avisos p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    text-align: left;
+}
+
+/* Garante que o texto não fique colado nas bordas no mobile */
+@media (max-width: 768px) {
+    .popover-avisos {
+        left: 0;
+        width: 240px;
     }
 }

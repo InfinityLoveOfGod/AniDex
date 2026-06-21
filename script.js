@@ -1,18 +1,29 @@
- // --- 1. Base de Dados com Avatares Estilizados em SVG Blindados com Base64 ---
-        function criarAvatar(corFundo, corCabelo, texto) {
-            const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><rect width="100" height="100" fill="${corFundo}"/><circle cx="50" cy="55" r="25" fill="#ffdbac"/><path d="M25 45 C25 20, 75 20, 75 45" fill="${corCabelo}"/><circle cx="42" cy="50" r="3" fill="#333"/><circle cx="58" cy="50" r="3" fill="#333"/><path d="M45 65 Q50 68 55 65" stroke="#333" stroke-width="2" fill="none"/><text x="50" y="90" font-family="sans-serif" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">${texto}</text></svg>`;
-            return "data:image/svg+xml;base64," + btoa(unescape(encodeURIComponent(svg)));
-        }
+// --- SISTEMA DE ABRIRE/FECHAR AVISOS ---
+const btnAvisos = document.getElementById('btn-avisos');
+const caixaAvisos = document.getElementById('caixa-avisos');
+
+btnAvisos.addEventListener('click', (event) => {
+    event.stopPropagation(); // Evita que o clique feche a caixa imediatamente
+    if (caixaAvisos.style.display === "none") {
+        caixaAvisos.style.display = "block";
+    } else {
+        caixaAvisos.style.display = "none";
+    }
+});
+
+// Fecha a caixa de avisos se o usuário clicar fora dela
+document.addEventListener('click', (event) => {
+    if (!caixaAvisos.contains(event.target) && event.target !== btnAvisos) {
+        caixaAvisos.style.display = "none";
+    }
+});
 
         const listaPersonagens = [
             // --- Clássicos Shonen/Seinen Iniciais ---
-            { nome: "Naruto Uzumaki", anime: "Naruto", genero: "Masculino", cabelo: "Loiro", demografia: "Shonen", ano_lancamento: 1999, papel: "Protagonista", imageUrl: "https://static.wikia.nocookie.net/naruto/images/7/7d/Naruto_Part_II.png/revision/latest/scale-to-width-down/1000?cb=20210811111154" },
             { nome: "Son Goku", anime: "Dragon Ball", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 1984, papel: "Protagonista", imageUrl: "https://static.wikia.nocookie.net/dragonball/images/0/00/GokuEndofDB.png/revision/latest?cb=20250305104956" },
             { nome: "Monkey D. Luffy", anime: "One Piece", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 1997, papel: "Protagonista", imageUrl: "https://static.wikia.nocookie.net/dubbing9585/images/6/64/Monkey_D._Luffy_OPStampede.png/revision/latest?cb=20240131091440" },
             { nome: "Satoru Gojo", anime: "Jujutsu Kaisen", genero: "Masculino", cabelo: "Branco", demografia: "Shonen", ano_lancamento: 2018, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/jujutsu-kaisen/images/f/f5/Satoru_quotes_I_alone_am_the_honored_one_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20230727233257" },
             { nome: "Tanjiro Kamado", anime: "Demon Slayer", genero: "Masculino", cabelo: "Ruivo", demografia: "Shonen", ano_lancamento: 2016, papel: "Protagonista", imageUrl: "https://static.wikia.nocookie.net/p__/images/7/7b/Tanjiro_colored_profile_%28Demon_Slayer_Mark%29.png/revision/latest?cb=20200409101340&path-prefix=protagonist" },
-            { nome: "Mikasa Ackerman", anime: "Attack on Titan", genero: "Feminino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2009, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/p__/images/d/db/Zky26sn5hcf01.jpg/revision/latest/scale-to-width-down/1000?cb=20200610203754&path-prefix=protagonist" },
-            { nome: "Edward Elric", anime: "Fullmetal Alchemist", genero: "Masculino", cabelo: "Loiro", demografia: "Shonen", ano_lancamento: 2001, papel: "Protagonista", imageUrl: "https://static.wikia.nocookie.net/p__/images/9/96/Fullmetal4.jpg/revision/latest/scale-to-width-down/1000?cb=20150306042233&path-prefix=protagonist" },
             { nome: "Nezuko Kamado", anime: "Demon Slayer", genero: "Feminino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2016, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/p__/images/2/20/Demon_Slayer_OP_1_-_Nezuko_Kamado.png/revision/latest/scale-to-width-down/1000?cb=20210619025857&path-prefix=protagonist" },
             { nome: "Izuku Midoriya", anime: "My Hero Academia", genero: "Masculino", cabelo: "Verde", demografia: "Shonen", ano_lancamento: 2014, papel: "Protagonista", imageUrl: "https://static.wikia.nocookie.net/p__/images/2/23/My-Hero-Academia-Two-Heroes-Screenshot-04.jpg/revision/latest?cb=20190223182503&path-prefix=protagonist" },
             
@@ -239,18 +250,81 @@
             { nome: "Jin Enjoji (Jiji)", anime: "Dandadan", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2021, papel: "Co-protagonista", imageUrl: "https://static.wikia.nocookie.net/dandadan/images/3/3c/Jiji_Anime_Infobox.png/revision/latest?cb=20240624155108" },
             { nome: "Kinta Sakata", anime: "Dandadan", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2021, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/dandadan/images/7/7e/Kinta_Sakata_Anime_Infobox.png/revision/latest?cb=20250821174736" },
            
-           
-
             // --- Atack on titan ---
+            { nome: "Eren Yeager", anime: "Attack on Titan", genero: "Masculino", cabelo: "Castanho", demografia: "Shonen", ano_lancamento: 2009, papel: "Protagonista", imageUrl: "https://static.wikia.nocookie.net/p__/images/e/e4/Attack_on_Titan_The_Final_Season_Part_2_-_Key_Visual_6.webp/revision/latest?cb=20231110151606&path-prefix=protagonist" },
+            { nome: "Mikasa Ackerman", anime: "Attack on Titan", genero: "Feminino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2009, papel: "Co-protagonista", imageUrl: "https://static.wikia.nocookie.net/p__/images/d/db/Zky26sn5hcf01.jpg/revision/latest/scale-to-width-down/1000?cb=20200610203754&path-prefix=protagonist" },
+            { nome: "Armin Arlert", anime: "Attack on Titan", genero: "Masculino", cabelo: "Loiro", demografia: "Shonen", ano_lancamento: 2009, papel: "Co-protagonista", imageUrl: "https://static.wikia.nocookie.net/p__/images/6/69/Armin_Arlert_857_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20231127073821&path-prefix=protagonist" },
+            { nome: "Levi Ackerman", anime: "Attack on Titan", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2009, papel: "Co-protagonista", imageUrl: "https://static.wikia.nocookie.net/p__/images/0/00/Levi.jpg/revision/latest/scale-to-width-down/1000?cb=20200628012657&path-prefix=protagonist" },
+            { nome: "Reiner Braun", anime: "Attack on Titan", genero: "Masculino", cabelo: "Loiro", demografia: "Shonen", ano_lancamento: 2009, papel: "Antagonista", imageUrl: "https://static.wikia.nocookie.net/p__/images/6/65/Reiner_inside_airship.png/revision/latest/scale-to-width-down/1000?cb=20230203005946&path-prefix=protagonist" },
+            { nome: "Erwin Smith", anime: "Attack on Titan", genero: "Masculino", cabelo: "Loiro", demografia: "Shonen", ano_lancamento: 2009, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/p__/images/8/88/Erwin_Smith_season_2.png/revision/latest/scale-to-width-down/1000?cb=20220807212728&path-prefix=protagonist" },
+            { nome: "Hange Zoë", anime: "Attack on Titan", genero: "Feminino", cabelo: "Castanho", demografia: "Shonen", ano_lancamento: 2009, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/p__/images/c/ce/Hange_Zo%C3%AB_Timeskip_Anime.png/revision/latest/scale-to-width-down/1000?cb=20220807211328&path-prefix=protagonist" },
+            { nome: "Annie Leonhart", anime: "Attack on Titan", genero: "Feminino", cabelo: "Loiro", demografia: "Shonen", ano_lancamento: 2009, papel: "Antagonista", imageUrl: "https://static.wikia.nocookie.net/p__/images/e/ea/Tumblr_97201f38f1078ca0668f95f18219b12e_070f6877_250.jpg/revision/latest?cb=20210629061838&path-prefix=protagonist" },
+            { nome: "Sasha Blouse", anime: "Attack on Titan", genero: "Feminino", cabelo: "Castanho", demografia: "Shonen", ano_lancamento: 2009, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/p__/images/c/ca/Sasha_Braus_%28Anime%29_character_image_%28850%29.png/revision/latest/scale-to-width-down/1000?cb=20210507034817&path-prefix=protagonist" },
+            { nome: "Zeke Yeager", anime: "Attack on Titan", genero: "Masculino", cabelo: "Loiro", demografia: "Shonen", ano_lancamento: 2009, papel: "Antagonista", imageUrl: "https://static.wikia.nocookie.net/villains/images/8/81/Zeke_Jaeger_854.png/revision/latest?cb=20231102013345" },
+            { nome: "Ymir Fritz", anime: "Attack on Titan", genero: "Feminino", cabelo: "Loiro", demografia: "Shonen", ano_lancamento: 2009, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/villains/images/f/f3/Ymir_Fritz.png/revision/latest?cb=20221214004623" },
+
             // --- Mob Psycho ---
+            { nome: "Shigeo Kageyama (Mob)", anime: "Mob Psycho 100", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2012, papel: "Protagonista", imageUrl: "https://static.wikia.nocookie.net/mob-psycho-100/images/9/9a/Mob_100%25_Anger.png/revision/latest?cb=20160722035056" },
+            { nome: "Arataka Reigen", anime: "Mob Psycho 100", genero: "Masculino", cabelo: "Loiro", demografia: "Shonen", ano_lancamento: 2012, papel: "Co-protagonista", imageUrl: "https://static.wikia.nocookie.net/mob-psycho-100/images/e/e5/Reigen_Separate_Ways.png/revision/latest?cb=20190312171339" },
+            { nome: "Ekubo (Covinhas)", anime: "Mob Psycho 100", genero: "Masculino", cabelo: "Nenhum", demografia: "Shonen", ano_lancamento: 2012, papel: "Co-protagonista", imageUrl: "https://static.wikia.nocookie.net/mob-psycho-100/images/1/1a/Dimple_anime_fullbody.png/revision/latest?cb=20201224130747" },
+            { nome: "Ritsu Kageyama", anime: "Mob Psycho 100", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2012, papel: "Co-protagonista", imageUrl: "https://static.wikia.nocookie.net/mob-psycho-100/images/a/a2/Ritsu_Orange_Outfit.png/revision/latest?cb=20190307222430" },
+            { nome: "Teruki Hanazawa (Teru)", anime: "Mob Psycho 100", genero: "Masculino", cabelo: "Loiro", demografia: "Shonen", ano_lancamento: 2012, papel: "Co-protagonista", imageUrl: "https://static.wikia.nocookie.net/mob-psycho-100/images/f/fb/372907.jpg/revision/latest?cb=20170514112927" },
+            { nome: "Toichiro Suzuki", anime: "Mob Psycho 100", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2012, papel: "Antagonista", imageUrl: "https://static.wikia.nocookie.net/mob-psycho-100/images/a/a5/Toichiro_before_breakup.png/revision/latest/scale-to-width-down/1000?cb=20190401224200" },
+            { nome: "Shou Suzuki", anime: "Mob Psycho 100", genero: "Masculino", cabelo: "Ruivo", demografia: "Shonen", ano_lancamento: 2012, papel: "Coadjuvante", imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSILeAfoRG4AXwKcHUy89051nd6TwG2bT2WsbHJ7g6MvQEk89HXspGVtFY&s=10" },
+            { nome: "Tome Kurata", anime: "Mob Psycho 100", genero: "Feminino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2012, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/mob-psycho-100/images/c/c7/Tome_Winter_Outfit.png/revision/latest?cb=20221124151821" },
+            { nome: "Katsuya Serizawa", anime: "Mob Psycho 100", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2012, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/mob-psycho-100/images/5/5e/Serizawa_Anime.jpg/revision/latest?cb=20190307194626" },
+            { nome: "Tsubomi Takane", anime: "Mob Psycho 100", genero: "Feminino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2012, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/mob-psycho-100/images/a/a7/Tsubomitennis.png/revision/latest?cb=20191210095457" },
+
+            // ---Baki---
+            { nome: "Baki Hanma", anime: "Baki", genero: "Masculino", cabelo: "Castanho", demografia: "Shonen", ano_lancamento: 1991, papel: "Protagonista", imageUrl: "https://static.wikia.nocookie.net/p__/images/9/9f/Baki_new_ova1.png/revision/latest?cb=20180919184808&path-prefix=protagonist" },
+            { nome: "Yujiro Hanma", anime: "Baki", genero: "Masculino", cabelo: "Ruivo", demografia: "Shonen", ano_lancamento: 1991, papel: "Antagonista", imageUrl: "https://static.wikia.nocookie.net/baki/images/a/a6/Yujiro_profile.png/revision/latest?cb=20230923222630" },
+            { nome: "Miyamoto Musashi", anime: "Baki", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 1991, papel: "Antagonista", imageUrl: "https://i.redd.it/who-would-win-musashi-musashi-or-musashi-v0-witucp1g0rhg1.jpg?width=1920&format=pjpg&auto=webp&s=52dcb66c477cee89a565e494e26728fc0cecd987" },
+            { nome: "Kaoru Hanayama", anime: "Baki", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 1991, papel: "Co-protagonista", imageUrl: "https://static.wikia.nocookie.net/baki/images/f/fd/Hanayama2_profile.png/revision/latest?cb=20240726233022" },
+            { nome: "Retsu Kaioh", anime: "Baki", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 1991, papel: "Co-protagonista", imageUrl: "https://static.wikia.nocookie.net/baki/images/e/e8/Retsu_profile.png/revision/latest?cb=20230923225835" },
+            { nome: "Jack Hanma", anime: "Baki", genero: "Masculino", cabelo: "Loiro", demografia: "Shonen", ano_lancamento: 1991, papel: "Co-protagonista", imageUrl: "https://static.wikia.nocookie.net/baki/images/b/bd/Jack_profile.png/revision/latest?cb=20220728195928" },
+            { nome: "Doppo Orochi", anime: "Baki", genero: "Masculino", cabelo: "Nenhum (Careca)", demografia: "Shonen", ano_lancamento: 1991, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/baki/images/8/8d/Doppo_profile.png/revision/latest?cb=20230923224324" },
+            { nome: "Biscuit Oliva (Senhor Oliva)", anime: "Baki", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 1991, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/baki/images/f/f7/Oliva_profile.png/revision/latest?cb=20220728195744" },
+            { nome: "Pickle", anime: "Baki", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 1991, papel: "Antagonista", imageUrl: "https://static.wikia.nocookie.net/baki/images/2/2a/Pickle_anime_profile.jpg/revision/latest?cb=20230923231923" },
+            { nome: "Gouki Shibukawa", anime: "Baki", genero: "Masculino", cabelo: "Grisalho", demografia: "Shonen", ano_lancamento: 1991, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/baki/images/9/97/Shibukawa_profile.png/revision/latest?cb=20220728195312" },
+            { nome: "Katsumi Orochi", anime: "Baki", genero: "Masculino", cabelo: "Castanho", demografia: "Shonen", ano_lancamento: 1991, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/baki/images/1/13/Katsumi_profile.png/revision/latest?cb=20220728195632" },
+            // ---Naruto---
+            
+            { nome: "Naruto Uzumaki", anime: "Naruto", genero: "Masculino", cabelo: "Loiro", demografia: "Shonen", ano_lancamento: 1999, papel: "Protagonista", imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmrgCCRR4wizcVPzpZzfxiFHkawWxxOH8uzp2cy6eo6w&s=10" },
+            { nome: "Sasuke Uchiha", anime: "Naruto", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 1999, papel: "Co-protagonista", imageUrl: "https://cdn.fatosdesconhecidos.com.br/wp-content/uploads/2018/07/6472098-44f2fd99a0f039c46c17dd281a6f4b3d.jpg" },
+            { nome: "Sakura Haruno", anime: "Naruto", genero: "Feminino", cabelo: "Rosa", demografia: "Shonen", ano_lancamento: 1999, papel: "Co-protagonista", imageUrl: "https://static.wikia.nocookie.net/animerevolution/images/7/7d/71a9678708675401bf6457da5ac9a5c8.jpg/revision/latest?cb=20230813050901&path-prefix=de" },
+            { nome: "Kakashi Hatake", anime: "Naruto", genero: "Masculino", cabelo: "Branco", demografia: "Shonen", ano_lancamento: 1999, papel: "Co-protagonista", imageUrl: "https://ovicio.com.br/wp-content/uploads/2021/08/20210825-adidas-ultraboost-copa-naruto-kakashi.jpg" },
+            { nome: "Itachi Uchiha", anime: "Naruto", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 1999, papel: "Antagonista", imageUrl: "https://upload.wikimedia.org/wikipedia/pt/thumb/e/e5/Itachi_Uchiha.jpg/250px-Itachi_Uchiha.jpg" },
+            { nome: "Madara Uchiha", anime: "Naruto", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 1999, papel: "Antagonista", imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVv9NH1NPNjI8jiW8pVEV_6cRo4Ntkv4fXUX0gUCLz3g&s=10" },
+            { nome: "Jiraiya", anime: "Naruto", genero: "Masculino", cabelo: "Branco", demografia: "Shonen", ano_lancamento: 1999, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/naruto/images/7/73/Jiraiya_perfil.PNG/revision/latest?cb=20191203234503&path-prefix=pt-br" },
+            { nome: "Gaara", anime: "Naruto", genero: "Masculino", cabelo: "Ruivo", demografia: "Shonen", ano_lancamento: 1999, papel: "Coadjuvante", imageUrl: "https://criticalhits.com.br/wp-content/uploads/2021/03/Gaara.jpg" },
+            { nome: "Orochimaru", anime: "Naruto", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 1999, papel: "Antagonista", imageUrl: "https://upload.wikimedia.org/wikipedia/pt/thumb/e/eb/Orochimaru.jpg/250px-Orochimaru.jpg" },
+            { nome: "Hinata Hyuga", anime: "Naruto", genero: "Feminino", cabelo: "Azul-escuro", demografia: "Shonen", ano_lancamento: 1999, papel: "Coadjuvante", imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7lgL3b5LRq9Juc_wGybqlDpyiQSA14FG9li6XSBqlfZ5gpZ4aY-fFpk0&s=10" },
+            { nome: "Pain (Nagato)", anime: "Naruto", genero: "Masculino", cabelo: "Ruivo", demografia: "Shonen", ano_lancamento: 1999, papel: "Antagonista", imageUrl: "https://i.pinimg.com/474x/b8/b9/1b/b8b91b5360da1a45363e5f1ae3e02e7c.jpg" },
+            { nome: "Shikamaru Nara", anime: "Naruto", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 1999, papel: "Coadjuvante", imageUrl: "https://criticalhits.com.br/wp-content/uploads/2020/10/shikamaru-4.jpg" },
+            { nome: "Minato Namikaze", anime: "Naruto", genero: "Masculino", cabelo: "Loiro", demografia: "Shonen", ano_lancamento: 1999, papel: "Coadjuvante", imageUrl: "https://ovicio.com.br/wp-content/uploads/2024/03/20240318-minato-kunai-01.jpg" },
+            { nome: "Obito Uchiha", anime: "Naruto", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 1999, papel: "Antagonista", imageUrl: "https://static.wikia.nocookie.net/naruto/images/2/28/Obito_%28Guerra%29.png/revision/latest/scale-to-width-down/1200?cb=20141219124512&path-prefix=pt-br" },
+            
             // --- Full Metal Achimist Brotherhood ---
+            { nome: "Edward Elric", anime: "Fullmetal Alchemist", genero: "Masculino", cabelo: "Loiro", demografia: "Shonen", ano_lancamento: 2001, papel: "Protagonista", imageUrl: "https://static.wikia.nocookie.net/p__/images/9/96/Fullmetal4.jpg/revision/latest/scale-to-width-down/1000?cb=20150306042233&path-prefix=protagonist" },
+            { nome: "Alphonse Elric", anime: "Fullmetal Alchemist", genero: "Masculino", cabelo: "Nenhum (Armadura)", demografia: "Shonen", ano_lancamento: 2001, papel: "Co-protagonista", imageUrl: "https://preview.redd.it/alphonse-elric-from-full-metal-alchemist-v0-pc2875wqh8ie1.jpg?width=640&crop=smart&auto=webp&s=71720e80d17e6a7354885603c72a608e098dde2f" },
+            { nome: "Roy Mustang", anime: "Fullmetal Alchemist", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2001, papel: "Co-protagonista", imageUrl: "https://jovemnerd.com.br/wp-content/uploads/2016/12/v-fullmetalroy.jpg" },
+            { nome: "Winry Rockbell", anime: "Fullmetal Alchemist", genero: "Feminino", cabelo: "Loiro", demografia: "Shonen", ano_lancamento: 2001, papel: "Coadjuvante", imageUrl: "https://criticalhits.com.br/wp-content/uploads/2022/09/Untitled-design-32.jpg" },
+            { nome: "Riza Hawkeye", anime: "Fullmetal Alchemist", genero: "Feminino", cabelo: "Loiro", demografia: "Shonen", ano_lancamento: 2001, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/fma/images/4/45/RizaHawkeye2009.png/revision/latest?cb=20160109014818&path-prefix=pt-br" },
+            { nome: "Scar", anime: "Fullmetal Alchemist", genero: "Masculino", cabelo: "Branco", demografia: "Shonen", ano_lancamento: 2001, papel: "Antagonista", imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG51bwjc88iTGW1xAp9375TjH1bjKTTlM9hfPrKmCbGeEUSYXlHYJ-5GE&s=10" },
+            { nome: "King Bradley", anime: "Fullmetal Alchemist", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2001, papel: "Antagonista", imageUrl: "https://preview.redd.it/spoiler-did-they-sterilize-king-bradley-v0-m074nv6odaga1.png?auto=webp&s=c83764163b93b68b93f8f101c66f75f03e0edece" },
+            { nome: "Ling Yao", anime: "Fullmetal Alchemist", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2001, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/fma/images/9/9b/Ling_Yao.jpg/revision/latest?cb=20120131015741&path-prefix=pt-br" },
+            { nome: "Maes Hughes", anime: "Fullmetal Alchemist", genero: "Masculino", cabelo: "Castanho", demografia: "Shonen", ano_lancamento: 2001, papel: "Coadjuvante", imageUrl: "https://i.redd.it/lnaf8butpiq21.png" },
+            { nome: "Lust (Luxúria)", anime: "Fullmetal Alchemist", genero: "Feminino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2001, papel: "Antagonista", imageUrl: "https://static.wikia.nocookie.net/fma/images/7/7c/Lust_FMA_2.jpg/revision/latest?cb=20240528021059" },
+            { nome: "Pai (Father)", anime: "Fullmetal Alchemist", genero: "Masculino", cabelo: "Loiro", demografia: "Shonen", ano_lancamento: 2001, papel: "Antagonista", imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRasMF2xFY3hsXz1bkbPWI3b6io8Lu90LY8wb4MgoG0OA9hFC1Y_p5R5P4&s=10" },
+            { nome: "The Truth", anime: "Fullmetal Alchemist", genero: "Nenhum", cabelo: "Nenhum", demografia: "Shonen", ano_lancamento: 2001, papel: "Coadjuvante", imageUrl: "https://m.media-amazon.com/images/I/611Xv9LKTlL.jpg" },
+        ]
             // --- Vinland Saga ---
             // --- Kaiju no 8 ---
             // --- Tengen Guren lagan ---
             //Adicionar Naruto, consertar foto da Shinobu, Saitama, Jolyne, 
             // Adicionar em Re:Zero -->Regulus, Otto, Roswaald, Aldebaran
 
-        ];
+       
 
         // --- 2. Estado Global do Jogo ---
         let personagemDoDia = null;

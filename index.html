@@ -5,16 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="https://drive.google.com/thumbnail?id=1RHl-omoRLWIzf-lRT9AQWYZouezaHuJl" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <title>AnimeToday</title>
+    <title>AniDex</title>
 </head>
 <body>
-    <header>
-        <h1>AnimeToday</h1>
-        <div class="header-buttons">
-            <button class="btn-hint" id="btn-hint">Pedir Dica</button>
-            <button class="btn-help" id="btn-help">Como Jogar</button>
+<header>
+    <div style="position: relative;">
+        <button id="btn-avisos" class="btn-help" style="background-color: rgba(185, 117, 214, 0.546); color: aliceblue;">Atualizações</button>
+        
+        <div id="caixa-avisos" class="popover-avisos">
+            <h3>📢 Atualizações</h3>
+            <hr style="border: 1px solid rgba(255,255,255,0.1); margin: 8px 0;">
+            <p>Adição de novos animes!</p>
+            <p>Baki, Full Metal Alchemist, Mob Psycho, Atack on Titan e Naruto</p>
+            <p style="color: var(--border-neon); margin-top: 5px; font-size: 0.8rem;">Última atualização: 21/06/2026</p>
         </div>
-    </header>
+    </div>
+
+    <h1>AniDex</h1>
+    <div class="header-buttons">
+        <button class="btn-hint" id="btn-hint">Pedir Dica</button>
+        <button class="btn-help" id="btn-help">Como Jogar</button>
+    </div>
+</header>
 
     <div class="instructions" id="instructions-panel">
         <p>Adivinhe o personagem misterioso do dia! Digite um nome para começar:</p>
@@ -55,6 +67,6 @@
         <p>Tentativas necessárias: <span id="victory-tries" style="color: var(--border-neon); font-weight: bold;">0</span></p>
         <button class="btn-restart" id="btn-restart">Jogar Novamente</button>
     </div>
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 </body>
 </html>
