@@ -23,8 +23,6 @@ document.addEventListener('click', (event) => {
             { nome: "Son Goku", anime: "Dragon Ball", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 1984, papel: "Protagonista", imageUrl: "https://static.wikia.nocookie.net/dragonball/images/0/00/GokuEndofDB.png/revision/latest?cb=20250305104956" },
             { nome: "Monkey D. Luffy", anime: "One Piece", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 1997, papel: "Protagonista", imageUrl: "https://static.wikia.nocookie.net/dubbing9585/images/6/64/Monkey_D._Luffy_OPStampede.png/revision/latest?cb=20240131091440" },
             { nome: "Satoru Gojo", anime: "Jujutsu Kaisen", genero: "Masculino", cabelo: "Branco", demografia: "Shonen", ano_lancamento: 2018, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/jujutsu-kaisen/images/f/f5/Satoru_quotes_I_alone_am_the_honored_one_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20230727233257" },
-            { nome: "Tanjiro Kamado", anime: "Demon Slayer", genero: "Masculino", cabelo: "Ruivo", demografia: "Shonen", ano_lancamento: 2016, papel: "Protagonista", imageUrl: "https://static.wikia.nocookie.net/p__/images/7/7b/Tanjiro_colored_profile_%28Demon_Slayer_Mark%29.png/revision/latest?cb=20200409101340&path-prefix=protagonist" },
-            { nome: "Nezuko Kamado", anime: "Demon Slayer", genero: "Feminino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2016, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/p__/images/2/20/Demon_Slayer_OP_1_-_Nezuko_Kamado.png/revision/latest/scale-to-width-down/1000?cb=20210619025857&path-prefix=protagonist" },
             
             // --- Elenco de Re:Zero ---
             { nome: "Subaru Natsuki", anime: "Re:Zero", genero: "Masculino", cabelo: "Preto", demografia: "Isekai", ano_lancamento: 2014, papel: "Protagonista", imageUrl: "https://static.wikia.nocookie.net/rezero/images/c/cf/Episode_56_Subaru.png/revision/latest/scale-to-width-down/1000?cb=20250410075333" },
@@ -46,10 +44,19 @@ document.addEventListener('click', (event) => {
             { nome: "Gotenks", anime: "Dragon Ball", genero: "Masculino", cabelo: "Bicolor", demografia: "Shonen", ano_lancamento: 2013, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/dragonball/images/f/f2/GotenksSSIIINV02.png/revision/latest?cb=20130103162411" },
             
             // --- Demon Slayer ---
+            { nome: "Tanjiro Kamado", anime: "Demon Slayer", genero: "Masculino", cabelo: "Ruivo", demografia: "Shonen", ano_lancamento: 2016, papel: "Protagonista", imageUrl: "https://static.wikia.nocookie.net/p__/images/7/7b/Tanjiro_colored_profile_%28Demon_Slayer_Mark%29.png/revision/latest?cb=20200409101340&path-prefix=protagonist" },
+            { nome: "Nezuko Kamado", anime: "Demon Slayer", genero: "Feminino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2016, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/p__/images/2/20/Demon_Slayer_OP_1_-_Nezuko_Kamado.png/revision/latest/scale-to-width-down/1000?cb=20210619025857&path-prefix=protagonist" },
+            { nome: "Tomioka Giyu", anime: "Demon Slayer", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2016, papel: "Coadjuvante", imageUrl: "https://criticalhits.com.br/wp-content/uploads/2021/06/giyu-tomioka-kimetsu-no-yaiba_sh3h-910x512.png" },
+            { nome: "Muzan Kibutsuji", anime: "Demon Slayer", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2016, papel: "Antagonista", imageUrl: "https://criticalhits.com.br/wp-content/uploads/2021/06/Muzan_encontra_Tanjiro_Kamado-1.jpg" },
+            { nome: "Sabito", anime: "Demon Slayer", genero: "Masculino", cabelo: "Ruivo", demografia: "Shonen", ano_lancamento: 2016, papel: "Coadjuvante", imageUrl: "https://preview.redd.it/sabito-wouldve-been-insanely-strong-if-he-survived-v0-6iemmfp7leq81.png?width=760&format=png&auto=webp&s=165998351f9a0881f6126a824c7a3c514e619d9d" },
+            { nome: "Makomo", anime: "Demon Slayer", genero: "Feminino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2016, papel: "Coadjuvante", imageUrl: "https://i.redd.it/how-old-would-makomo-currently-be-v0-u0200vk7unve1.jpg?width=540&format=pjpg&auto=webp&s=400aa3bb2b6f67968f1547e60b192c44af92b377" },
             { nome: "Zenitsu Agatsuma", anime: "Demon Slayer", genero: "Masculino", cabelo: "Loiro", demografia: "Shonen", ano_lancamento: 2016, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/p__/images/1/15/Zenitsu_using_Thunder_Breathing_Technique%2C_First_Form.jpg/revision/latest/scale-to-width-down/1000?cb=20210522161817&path-prefix=protagonist" },
             { nome: "Inosuke Hashibira", anime: "Demon Slayer", genero: "Masculino", cabelo: "Azul Escuro", demografia: "Shonen", ano_lancamento: 2016, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/p__/images/a/a2/Inosuke_ready_to_attack.png/revision/latest/scale-to-width-down/1000?cb=20210516050456&path-prefix=protagonist" },
-            { nome: "Shinobu Kocho", anime: "Demon Slayer", genero: "Feminino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2016, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/p__/images/6/61/B91D3304-63C4-4F7D-909D-D1D8B92A4256.jpeg/revision/latest?cb=20200308014809&path-prefix=protagonist" },
+            { nome: "Shinobu Kocho", anime: "Demon Slayer", genero: "Feminino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2016, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/a/a8/Shinobu_Kocho_e_sua_l%C3%A2mina_Nichirin.jpg/revision/latest?cb=20210503181233&path-prefix=pt-br" },
             { nome: "Kyojuro Rengoku", anime: "Demon Slayer", genero: "Masculino", cabelo: "Loiro", demografia: "Shonen", ano_lancamento: 2016, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/p__/images/a/ad/Kyojuro_anime_introduction.png/revision/latest/scale-to-width-down/1000?cb=20200412175234&path-prefix=protagonist" },
+            { nome: "Akaza", anime: "Demon Slayer", genero: "Masculino", cabelo: "Rosa", demografia: "Shonen", ano_lancamento: 2016, papel: "Antagonista", imageUrl: "https://ovicio.com.br/wp-content/uploads/2024/04/20240418-akaza-demonslayer.webp" },
+            { nome: "Mitsuri Kanroji", anime: "Demon Slayer", genero: "Feminino", cabelo: "Rosa", demografia: "Shonen", ano_lancamento: 2016, papel: "Coadjuvante", imageUrl: "https://animenew.com.br/wp-content/uploads/2024/02/Demon-Slayer-cosplay-impecavel-de-Mitsuri-deixa-fas-sem-folego-jpg-webp.webp" },
+            { nome: "Uzui Tengen", anime: "Demon Slayer", genero: "Masculino", cabelo: "Branco", demografia: "Shonen", ano_lancamento: 2016, papel: "Coadjuvante", imageUrl: "https://www.comboinfinito.com.br/principal/wp-content/uploads/2022/01/demon-slayer-uzui.jpg" },
             
             // --- Solo Leveling ---
             { nome: "Sung Jin-woo", anime: "Solo Leveling", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2016, papel: "Protagonista", imageUrl: "https://static.wikia.nocookie.net/p__/images/9/93/Solo_Leveling_Manhwa_Dungeon_and_Prisoners_Arc_Panel_23.png/revision/latest?cb=20240126134340&path-prefix=protagonist" },
@@ -84,8 +91,8 @@ document.addEventListener('click', (event) => {
             { nome: "Leorio Paradinight", anime: "Hunter x Hunter", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 1998, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/hunterxhunter/images/7/73/HxH2011_EP145_Leorio_Portrait.png/revision/latest/scale-to-width-down/1000?cb=20230902193715" },
             { nome: "Hisoka Morow", anime: "Hunter x Hunter", genero: "Masculino", cabelo: "Ruivo", demografia: "Shonen", ano_lancamento: 1998, papel: "Antagonista", imageUrl: "https://static.wikia.nocookie.net/hunterxhunter/images/0/08/HxH2011_EP3_Hisoka_debut_scene.png/revision/latest/scale-to-width-down/1000?cb=20230308060629" },
             { nome: "Chollo Lucilfer", anime: "Hunter x Hunter", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 1998, papel: "Antagonista", imageUrl: "https://static.wikia.nocookie.net/hunterxhunter/images/4/49/2011_EP52_Chrollo_faces_Silva_and_Zeno.png/revision/latest/scale-to-width-down/1000?cb=20240223031717" },
-            {nome: "Kaito", anime: "Hunter x Hunter", genero: "Masculino", cabelo: "Branco", demografia: "Shonen", ano_lancamento: 1988, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/hunterxhunter/images/1/1d/Kite_CA_Portrait.png/revision/latest?cb=20190127155247"},
-            {nome: "Meruem", anime: "Hunter x Hunter", genero: "Masculino", cabelo: "Careca", demografia: "Shonen", ano_lancamento: 1988, papel: "Antagonista", imageUrl: "https://static.wikia.nocookie.net/hunterxhunter/images/8/8e/126_-_Meruem_asks_for_his_name.png/revision/latest/scale-to-width-down/1000?cb=20240223020155"},
+            {nome: "Kaito", anime: "Hunter x Hunter", genero: "Masculino", cabelo: "Branco", demografia: "Shonen", ano_lancamento: 1998, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/hunterxhunter/images/1/1d/Kite_CA_Portrait.png/revision/latest?cb=20190127155247"},
+            {nome: "Meruem", anime: "Hunter x Hunter", genero: "Masculino", cabelo: "Careca", demografia: "Shonen", ano_lancamento: 1998, papel: "Antagonista", imageUrl: "https://static.wikia.nocookie.net/hunterxhunter/images/8/8e/126_-_Meruem_asks_for_his_name.png/revision/latest/scale-to-width-down/1000?cb=20240223020155"},
 
             // --- JoJo's Bizarre Adventure ---
             { nome: "Jotaro Kujo", anime: "JoJo's Bizarre Adventure", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 1987, papel: "Protagonista", imageUrl: "https://static.wikia.nocookie.net/jjba/images/0/01/JotaroProfile.png/revision/latest?cb=20191125014406" },
@@ -156,7 +163,7 @@ document.addEventListener('click', (event) => {
             { nome: "Michael Kaiser", anime: "Blue Lock", genero: "Masculino", cabelo: "Bicolor", demografia: "Shonen", ano_lancamento: 2018, papel: "Antagonista", imageUrl: "https://static.wikia.nocookie.net/azure-latch/images/a/ae/Kaiser-Image.png/revision/latest?cb=20260302012826" },
 
             // --- Gachiakuta ---
-            { nome: "Rudo", anime: "Gachiakuta", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2022, papel: "Protagonista", imageUrl: "https://static.wikia.nocookie.net/gachiakuta/images/6/69/RudoP.png/revision/latest?cb=20220622091502" },
+            { nome: "Rudo", anime: "Gachiakuta", genero: "Masculino", cabelo: "Branco", demografia: "Shonen", ano_lancamento: 2022, papel: "Protagonista", imageUrl: "https://static.wikia.nocookie.net/gachiakuta/images/6/69/RudoP.png/revision/latest?cb=20220622091502" },
             { nome: "Enjin", anime: "Gachiakuta", genero: "Masculino", cabelo: "Branco", demografia: "Shonen", ano_lancamento: 2022, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/gachiakuta/images/4/4e/Engine_-_Chapter_1.png/revision/latest?cb=20220223174433" },
             { nome: "Zanka Nijiku", anime: "Gachiakuta", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2022, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/gachiakuta/images/8/86/Zanka.png/revision/latest?cb=20220423125144" },
             { nome: "Riyou", anime: "Gachiakuta", genero: "Feminino", cabelo: "Rosa", demografia: "Shonen", ano_lancamento: 2022, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/gachiakuta/images/a/a0/RiyouPic.png/revision/latest?cb=20220805190742" },
@@ -361,7 +368,7 @@ document.addEventListener('click', (event) => {
             { nome: "Re-Destro", anime: "My Hero Academia", genero: "Masculino", cabelo: "Ruivo", demografia: "Shonen", ano_lancamento: 2014, papel: "Antagonista", imageUrl: "https://static.wikia.nocookie.net/bokunoheroacademia/images/b/b2/Rikiya_facial_stain.png/revision/latest/scale-to-width-down/1000?cb=20251028000816" },
 
             //Outros personagens
-            { nome: "Eri", anime: "My Hero Academia", genero: "Feminino(Criança)", cabelo: "Branco", demografia: "Shonen", ano_lancamento: 2014, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/bokunoheroacademia/images/4/45/Eri_wants_to_see_the_School_Festival.png/revision/latest/scale-to-width-down/1000?cb=20251018050404" },
+            { nome: "Eri", anime: "My Hero Academia", genero: "Feminino", cabelo: "Branco", demografia: "Shonen", ano_lancamento: 2014, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/bokunoheroacademia/images/4/45/Eri_wants_to_see_the_School_Festival.png/revision/latest/scale-to-width-down/1000?cb=20251018050404" },
             { nome: "Aizawa", anime: "My Hero Academia", genero: "Masculino", cabelo: "Preto", demografia: "Shonen", ano_lancamento: 2014, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/bokunoheroacademia/images/0/00/Shota_pledges_to_take_something_away_from_Kyudai.png/revision/latest/scale-to-width-down/1000?cb=20251102031409" },
             { nome: "Mirio Togata", anime: "My Hero Academia", genero: "Masculino", cabelo: "Loiro", demografia: "Shonen", ano_lancamento: 2014, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/bokunoheroacademia/images/1/15/Mirio_Togata%27s_joke.png/revision/latest/scale-to-width-down/1000?cb=20251011000910" },
             { nome: "Tamaki Amajiki", anime: "My Hero Academia", genero: "Masculino", cabelo: "Azul-Escuro", demografia: "Shonen", ano_lancamento: 2014, papel: "Coadjuvante", imageUrl: "https://static.wikia.nocookie.net/bokunoheroacademia/images/9/98/Episode_71.png/revision/latest/scale-to-width-down/1000?cb=20251014005231" },
@@ -380,16 +387,57 @@ document.addEventListener('click', (event) => {
             //----------------------------------------------------------------------------------------------------------------------------------------
         
         
-        
         ]
+                 // -------------------------------------------------------Novos Animes------------------------------------------
             // --- Vinland Saga ---
             // --- Kaiju no 8 ---
+            //--- One Piece ---
+            // Tensei Shitara Slime
+            // ---- Mais personagens de re:zero
+            // ---- Mais personagens de Demon slayer
+            // Oshi no Ko
+            // Darling in the franxx
+            // ---- Mais personagens de Jujutsu kaisen
             // --- Tengen Guren lagan ---
-            //Adicionar Naruto, consertar foto da Shinobu, Saitama, Jolyne, 
+            //Consertar foto da Shinobu, Saitama, Jolyne, 
             // Adicionar em Re:Zero -->Regulus, Otto, Roswaald, Aldebaran
             // Adicionar Irmã Lily de black clover
        
 
+            // --- LÓGICA DO NOVO BOTÃO DE REINICIAR DO INPUT ---
+const btnInputRestart = document.getElementById('btn-input-restart');
+
+if (btnInputRestart) {
+    btnInputRestart.addEventListener('click', () => {
+        // 1. Limpa os palpites enviados
+        palpitesEnviados = [];
+        
+        // 2. Sorteia um novo personagem aleatório
+        personagemDoDia = listaPersonagens[Math.floor(Math.random() * listaPersonagens.length)];
+        
+        // 3. Reseta os estados de jogo concluidos e inputs
+        jogoConcluido = false;
+        const searchInput = document.getElementById('search-input');
+        if (searchInput) {
+            searchInput.disabled = false;
+            searchInput.value = '';
+        }
+        
+        // 4. Limpa o container de palpites visuais
+        const guessesBox = document.getElementById('guesses-box');
+        if (guessesBox) guessesBox.innerHTML = '';
+        
+        // 5. Oculta ou limpa o painel de dicas
+        const hintPanel = document.getElementById('hint-panel');
+        if (hintPanel) {
+            hintPanel.innerHTML = '';
+            hintPanel.classList.remove('show');
+        }
+        
+        // Mensagem discreta no console para debug/confirmação
+        console.log("Novo personagem sorteado! Jogo reiniciado com sucesso.");
+    });
+}
         // --- 2. Estado Global do Jogo ---
         let personagemDoDia = null;
         let palpitesEnviados = [];

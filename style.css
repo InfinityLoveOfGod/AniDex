@@ -14,7 +14,7 @@
         body {
            background-image: 
         linear-gradient(rgba(15, 15, 26, 0.75), rgba(15, 15, 26, 0.75)), /* Camada escura transparente */
-        url(https://i.pinimg.com/originals/de/31/63/de3163dc1cf84bdf85f3eba67f9ae854.jpg);                                  
+        url(https://images.steamusercontent.com/ugc/13143990579577505831/195167CCBEDC72664366EEAD5967E57EE5A6C481/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true);                                  
          background-repeat: no-repeat;
          background-size: cover;
          background-position: center;
@@ -414,4 +414,160 @@
         left: 0;
         width: 240px;
     }
+}
+/* Alinhamento do container de busca para aceitar o botão inline */
+.search-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Estilização do mini-botão de reiniciar */
+.btn-restart-small {
+    background: var(--panel-bg);
+    border: 2px solid var(--purple-neon);
+    color: var(--text-color);
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-restart-small:hover {
+    background: var(--purple-neon);
+    color: #fff;
+    box-shadow: 0 0 10px var(--purple-neon);
+    transform: scale(1.05);
+}
+
+/* Garante que o input continue ocupando o espaço restante */
+.search-box {
+    flex: 1;
+}
+/* --- Estilização do Menu de Opções de Dicas --- */
+.hint-menu-title {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 12px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-bottom: 6px;
+}
+
+.hint-options-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn-hint-option {
+    background: rgba(26, 26, 46, 0.8);
+    border: 1px solid var(--border-neon);
+    color: var(--border-neon);
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease-in-out;
+    flex: 1 1 calc(50% - 10px); /* Ocupa metade da linha em telas menores */
+    min-width: 140px;
+}
+
+.btn-hint-option:not(:disabled):hover {
+    background: var(--border-neon);
+    color: var(--bg-color);
+    box-shadow: 0 0 8px var(--border-neon);
+}
+
+/* Estilos visuais para as dicas bloqueadas */
+.btn-hint-option:disabled {
+    border-color: #555;
+    color: #777;
+    cursor: not-allowed;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: none;
+}
+
+.hint-revealed-text {
+    font-size: 1.1rem;
+    color: var(--border-neon);
+    animation: fadeInHint 0.3s ease;
+}
+
+@keyframes fadeInHint {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Alinhamento do container de busca */
+.search-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Estilo do mini botão de reiniciar */
+.btn-restart-small {
+    background: var(--panel-bg);
+    border: 2px solid var(--purple-neon);
+    color: var(--text-color);
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-restart-small:hover {
+    background: var(--purple-neon);
+    box-shadow: 0 0 10px var(--purple-neon);
+    transform: scale(1.05);
+}
+
+.search-box {
+    flex: 1; /* Faz o input ocupar todo o resto do espaço */
+}
+
+/* Estilos do menu interno de dicas */
+.hint-menu-title {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.hint-options-container {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-hint-option {
+    background: rgba(26, 26, 46, 0.9);
+    border: 1px solid var(--border-neon);
+    color: var(--border-neon);
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.btn-hint-option:disabled {
+    border-color: #444;
+    color: #666;
+    cursor: not-allowed;
+    background: rgba(0,0,0,0.3);
+}
+
+.btn-hint-option:not(:disabled):hover {
+    background: var(--border-neon);
+    color: #000;
 }

@@ -15,11 +15,11 @@
         <div id="caixa-avisos" class="popover-avisos">
             <h3>📢 Atualizações</h3>
             <hr style="border: 1px solid rgba(255,255,255,0.1); margin: 8px 0;">
-            <p>-Correção de Bugs</p>
+            <p>-Botão Reiniciar</p>
             <p style="color: aqua;">Adição de novos animes:</p>
-            <p>-Elenco de My hero Academia</p>
+            <p>-Elenco de Demon Slayer</p>
             <p>-Plano de fundo temático</p>
-            <p style="color: var(--border-neon); margin-top: 5px; font-size: 0.8rem;">Última atualização: 22/06/2026</p>
+            <p style="color: var(--border-neon); margin-top: 5px; font-size: 0.8rem;">Última atualização: 30/06/2026</p>
         </div>
     </div>
 
@@ -36,15 +36,17 @@
             <li><span style="color: var(--correct-color); font-weight: bold;">Verde</span> significa que você acertou o atributo em cheio.</li>
             <li><span style="color: var(--incorrect-color); font-weight: bold;">Vermelho</span> significa que o atributo está incorreto.</li>
             <li>No campo <strong>Ano</strong>, setas indicam se o personagem correto estreou antes (🔽) ou depois (🔼) do seu palpite.</li>
+            <li>Você pode <b>reiniciar</b> o personagem ao clicar sobre o ícone 🔄</li>
         </ul>
     </div>
 
     <div class="hint-panel" id="hint-panel"></div>
 
     <div class="search-container">
-        <input type="text" class="search-box" id="search-input" placeholder="Digite o nome do personagem..." autocomplete="off">
-        <div class="autocomplete-dropdown" id="dropdown"></div>
-    </div>
+    <button id="btn-input-restart" class="btn-restart-small" title="Reiniciar Jogada e Trocar Personagem">🔄</button>
+    <input type="text" class="search-box" id="search-input" placeholder="Digite o nome do personagem..." autocomplete="off">
+    <div class="autocomplete-dropdown" id="dropdown"></div>
+</div>
 
     <main class="grid-container">
         <div class="grid-header">
